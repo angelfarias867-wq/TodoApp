@@ -1,7 +1,20 @@
 const jwt = require("jsonwebtoken");
 
 const userExtractor = async (request, response, next) => {
-    console.log("Middleware userExtractor ejecutado");
+    const token = request.cookies?.accessToken;
+    try {
+        if (!token) {
+        return response.status(401);
+    }
+
+    const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+    const user = await User.findById(decoded.id);
+    console.log(user);
+    } 
+    catch (error) {
+        return response.status(403);
+    }
+    next();
 };
 
 module.exports = { userExtractor };
