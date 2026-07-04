@@ -9,7 +9,7 @@ const userExtractor = async (request, response, next) => {
 
     const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
     const user = await User.findById(decoded.id);
-    console.log(user);
+    request.user = user;
     } 
     catch (error) {
         return response.status(403);
