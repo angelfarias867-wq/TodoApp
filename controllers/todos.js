@@ -23,4 +23,16 @@ todosRouter.post("/", async (request, response) => {
     return response.status(201).json(savedTodo);
   });
 
+  
+  todosRouter.post("/:id", async (request, response) => {
+    const user = request.user;
+    await Todo.findByIdAndDelete(request.params.id);
+    user.todos = user.todos.filter(todo => todo.id );
+    await user.save();
+
+    return response.status(204);
+  });
+
+  
+
 module.exports = todosRouter;
