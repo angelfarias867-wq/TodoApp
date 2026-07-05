@@ -24,15 +24,21 @@ todosRouter.post("/", async (request, response) => {
   });
 
   
-  todosRouter.post("/:id", async (request, response) => {
+  todosRouter.delete("/:id", async (request, response) => {
     const user = request.user;
     await Todo.findByIdAndDelete(request.params.id);
-    user.todos = user.todos.filter(todo => todo.id );
+    user.todos = user.todos.filter(todo => todo.id !== request.params.id);
     await user.save();
 
-    return response.status(204);
+    return response.sendStatus(204);
   });
 
+  todosRouter.patch("/:id", async (request, response) => {
+    const user = request.user;
+    const { checked } = request.body;
+    await Todo.findOneAndUpdate(request.params.id, { checked });
+    return response.sendStatus(200);
+  });
   
 
 module.exports = todosRouter;
