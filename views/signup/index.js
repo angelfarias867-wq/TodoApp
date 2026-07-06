@@ -23,16 +23,17 @@ const validation = (element, validationTest) => {
   formBtn.disabled = nameTest && emailTest && passwordTest && matchTest ? false : true;
 
 if (element.value === '') {
-  element.classList.remove('outline-red-700', 'outline-green-700', 'outline');
-  element.classList.add('focus:outline-indigo-700', 'outline-2');
+   element.classList.remove('border-emerald-500', 'focus:border-emerald-500', 'focus:ring-emerald-500/10','border-rose-500', 'focus:border-rose-500', 'focus:ring-rose-500/10');
+    element.classList.add('border-zinc-800', 'focus:border-purple-500', 'focus:ring-purple-500/10');
 
 } else if (validationTest) {
-  element.classList.remove('focus:outline-indigo-700', 'outline-red-700');
-  element.classList.add('outline-green-700', 'outline-2', 'outline');
+  element.classList.remove('border-zinc-800', 'focus:border-purple-500', 'focus:ring-purple-500/10',
+      'border-rose-500', 'focus:border-rose-500', 'focus:ring-rose-500/10');
+  element.classList.add('border-emerald-500', 'focus:border-emerald-500', 'focus:ring-emerald-500/10');
 
 } else {
-  element.classList.remove('focus:outline-indigo-700', 'outline-green-700');
-  element.classList.add('outline-red-700', 'outline-2', 'outline');
+  element.classList.remove('border-zinc-800', 'focus:border-purple-500', 'focus:ring-purple-500/10','border-emerald-500', 'focus:border-emerald-500', 'focus:ring-emerald-500/10');
+  element.classList.add('border-rose-500', 'focus:border-rose-500', 'focus:ring-rose-500/10');
 }
 };
 
