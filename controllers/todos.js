@@ -36,9 +36,10 @@ todosRouter.post("/", async (request, response) => {
   todosRouter.patch("/:id", async (request, response) => {
     const user = request.user;
     const { checked } = request.body;
-    await Todo.findOneAndUpdate(request.params.id, { checked });
+    await Todo.findByIdAndUpdate(request.params.id, { checked });
     return response.sendStatus(200);
-  });
+});
+
   
 
 module.exports = todosRouter;
