@@ -1,7 +1,7 @@
 const navbar = document.querySelector('#navbar');
 
 const createNavHome = () => {
-    navbar.innerHTML = `<div class="max-w-7xl h-16 mx-auto flex items-center px-4 justify-between">
+    navbar.innerHTML = `<div class="w-full h-16 mx-auto flex items-center px-4 justify-between">
       <p class="font-bold text-sm tracking-wider uppercase bg-gradient-to-r from-purple-400 to-fuchsia-500 bg-clip-text text-transparent">TodoApp</p>
 
       <!-- version mobile -->
@@ -22,7 +22,7 @@ const createNavHome = () => {
 };
 
 const createNavSignunp = () => {
-    navbar.innerHTML = `<div class="max-w-7xl h-16 mx-auto flex items-center px-4 justify-between">
+    navbar.innerHTML = `<div class="w-full h-16 mx-auto flex items-center px-4 justify-between">
       <p class="font-bold text-sm tracking-wider uppercase bg-gradient-to-r from-purple-400 to-fuchsia-500 bg-clip-text text-transparent">TodoApp</p>
 
       <!-- version mobile -->
@@ -41,7 +41,7 @@ const createNavSignunp = () => {
 };
 
 const createNavLogin = () => {
-    navbar.innerHTML = `<div class="max-w-7xl h-16 mx-auto flex items-center px-4 justify-between">
+    navbar.innerHTML = `<div class="w-full h-16 mx-auto flex items-center px-4 justify-between">
                             <p class="font-bold text-sm tracking-wider uppercase bg-gradient-to-r from-purple-400 to-fuchsia-500 bg-clip-text text-transparent">TodoApp</p>
 
                             <!-- version mobile -->
@@ -60,7 +60,7 @@ const createNavLogin = () => {
 };
 
 const createNavTodos = () => {
-    navbar.innerHTML = `<div class="max-w-7xl h-16 mx-auto flex items-center px-4 justify-between">
+    navbar.innerHTML = `<div class="w-full h-16 mx-auto flex items-center px-4 justify-between">
                             <p class="font-bold text-sm tracking-wider uppercase bg-gradient-to-r from-purple-400 to-fuchsia-500 bg-clip-text text-transparent">TodoApp</p>
 
                             <!-- version mobile -->

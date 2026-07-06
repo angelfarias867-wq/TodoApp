@@ -9,11 +9,13 @@ const incompletedCountSpan = document.querySelector('.incompleted-count');
 
 
 const totalCount = () => {
+	// Obtiene la cantidad de elementos hijos directos (li) que tiene la lista ul
 	const howMany = document.querySelector('ul').children.length; 
 	totalCountSpan.innerHTML = howMany;
 };
 
 const completeCount = () => {
+	//Cuenta cuántos elementos en toda la página tienen la clase 'line-through'
 	const howMany = document.querySelectorAll('.line-through').length;
 	completedCountSpan.innerHTML = howMany;
 };
@@ -49,9 +51,9 @@ form.addEventListener('submit', async e => {
 
 
 	
-    // crea nueva tarea
+    //Crea una nueva tarea con el metodo post
 	const { data } = await axios.post('/api/todos', { text: input.value });
-	console.log(data);
+	// console.log(data);
 
 	const listItem = document.createElement('li');
 	listItem.id = data.id;
