@@ -1,5 +1,4 @@
 require("dotenv").config();  // Carga las variables ocultas del archivo .env
-require("dotenv").config();  // Carga las variables ocultas del archivo .env
 const express = require("express"); //El framework para crear el servidor
 const mongoose = require("mongoose"); // La librería para conectarnos y hablar con MongoDB
 const path = require("path") //para manejar y resolver rutas de carpetas de forma segura
@@ -14,13 +13,14 @@ const { userExtractor } = require("./middleware/auth");
 
 const app = express();
 exports.app = app;
+const { MONGO_URI } = require("./config");
 
 (async() => {
 
 try {
     //Se conecta a la base de datos
-await mongoose.connect(process.env.MONGO_URI_TEST)
-console.log("Conectado a Mongo DB");
+await mongoose.connect(MONGO_URI)
+// console.log("Conectado a Mongo DB");
 
 } catch (error) {
 console.log(error);
