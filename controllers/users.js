@@ -9,7 +9,8 @@ const { PAGE_URL } = require('../config'); // Importar la URL de la página desd
 //se valida que los campos no estén vacíos y se hace desestructuracion de objetos
 usersRouter.post('/', async (request, response) => {
   const { name, email, password } = request.body;
-  console.log(name, email, password);
+  // console.log(name, email, password);
+
   if (!name || !email || !password) {
     return response
       .status(400)
@@ -46,8 +47,7 @@ usersRouter.post('/', async (request, response) => {
   }
   //--------------------------------------
   
-  //se encripta la contraseña con la libreria bcrypt y un metodo .has, primero se define el numero de rondas y luego
-  //se usa la función .hash para encriptar la contraseña
+  //Se define el numero de rondas y luego y se usa la función .hash para encriptar la contraseña
   const saltRounds = 10;
   const passwordHash = await bcrypt.hash(password, saltRounds);
 
@@ -59,7 +59,7 @@ usersRouter.post('/', async (request, response) => {
     verified: true,
   });
 
-  // Se guarda el usuario en la base de datos con el metodo de mongoose (.save)
+  // Se guarda el usuario en la base de datos
   await newUser.save();
   
 return response

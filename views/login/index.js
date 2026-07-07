@@ -3,7 +3,7 @@ const passwordInput = document.getElementById("password-input");
 const form = document.getElementById("form");
 const errorText = document.getElementById("error-text");
 
-console.log(axios);
+// console.log(axios);
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -12,7 +12,7 @@ form.addEventListener("submit", async (e) => {
     email: emailImput.value,
     password: passwordInput.value
     }
-    console.log(user);
+    // console.log(user);
     await axios.post("/api/login", user);
     window.location.pathname = `/todos/`;
   } catch (error) {
