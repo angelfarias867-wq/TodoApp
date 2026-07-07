@@ -8,6 +8,7 @@ if (!cookies?.accessToken) {
     return response.sendStatus(401)
 }
 
+//Borrar la cookie para cerrar la sesion
 response.clearCookie("accessToken", {
      secure: process.env.NODE_ENV === 'production',
     httpOnly: true 
